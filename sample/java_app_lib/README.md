@@ -43,10 +43,12 @@ BUILD SUCCESSFUL in 29s
 ```
 
 ```
-./gradlew --version  查看版本
-./gradlew run        运行
-./gradlew build      打包成.tar和.zip
-./gradlew clean　　　清理
+./gradlew --version         查看版本
+./gradlew check             执行所有test
+./gradlew run               运行
+./gradlew build             打包成.tar和.zip
+./gradlew clean　　　       清理
+./gradlew -p buildSrc clean 清理buildSrc项目
 ```
 
 [Building Java Applications with libraries Sample](https://docs.gradle.org/6.7/samples/sample_building_java_applications_multi_project.html)
