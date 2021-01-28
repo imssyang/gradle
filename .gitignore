@@ -3,6 +3,7 @@ archive
 bin
 docs
 home
+init.d/.gradle
 lib
 sample
 src
