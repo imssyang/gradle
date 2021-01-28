@@ -1,17 +1,17 @@
 
-### Java-App-Lib
+### Java-Lib
 
-Setup a Java application project with libraries step-by-step.
+Setup a Java library project step-by-step.
 
 ```
-$ cd java_app_lib
+$ cd java_lib
 $ gradle init          初始化
 Select type of project to generate:
   1: basic
   2: application
   3: library
   4: Gradle plugin
-Enter selection (default: basic) [1..4] 2
+Enter selection (default: basic) [1..4] 3
 
 Select implementation language:
   1: C++
@@ -22,23 +22,25 @@ Select implementation language:
   6: Swift
 Enter selection (default: Java) [1..6] 3
 
-Split functionality across multiple subprojects?:
-  1: no - only one application project
-  2: yes - application and library projects
-Enter selection (default: no - only one application project) [1..2] 2
-
 Select build script DSL:
   1: Groovy
   2: Kotlin
-Enter selection (default: Groovy) [1..2] 1
+Enter selection (default: Groovy) [1..2] 
 
-Project name (default: java_app_lib): 
-Source package (default: java_app_lib): 
+Select test framework:
+  1: JUnit 4
+  2: TestNG
+  3: Spock
+  4: JUnit Jupiter
+Enter selection (default: JUnit 4) [1..4] 
+
+Project name (default: java_lib): 
+Source package (default: java_lib): 
 
 > Task :init
-Get more help with your project: https://docs.gradle.org/6.7/samples/sample_building_java_applications_multi_project.html
+Get more help with your project: https://docs.gradle.org/6.7/samples/sample_building_java_libraries.html
 
-BUILD SUCCESSFUL in 29s
+BUILD SUCCESSFUL in 13s
 2 actionable tasks: 2 executed
 ```
 
