@@ -1,6 +1,8 @@
 
 # Java-App
 
+Setup a Java application project step-by-step.
+
 ```
 cd java_app
 gradle init          初始化
