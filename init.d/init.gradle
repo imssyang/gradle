@@ -1,17 +1,26 @@
 
 allprojects {
     repositories {
-        mavenLocal()
-		maven { name "Alibaba" ; url "https://maven.aliyun.com/repository/public" }
-		maven { name "Bstek" ; url "http://nexus.bsdn.org/content/groups/public/" }
+        def ALIYUN_REPO = 'http://maven.aliyun.com/nexus/content/groups/public/'
+        all { ArtifactRepository repo ->
+            if (repo instanceof MavenArtifactRepository) {
+                def repoUrl = url
+                if (url instanceof java.net.URI) {
+                    repoUrl = url.toString()
+                }
+                if (repoUrl.startsWith('https://repo1.maven.org/maven2')
+                        || repoUrl.startsWith('http://repo1.maven.org/maven2')
+                        || repoUrl.startsWith('https://repo.maven.apache.org/maven2')
+                        || repoUrl.startsWith('https://jcenter.bintray.com/')
+                        || repoUrl.startsWith('http://jcenter.bintray.com/')) {
+                    project.logger.lifecycle "Repository ${repoUrl} replaced by ${ALIYUN_REPO}"
+                    remove repo
+                }
+            }
+        }
+        maven {
+            url ALIYUN_REPO
+        }
     }
-
-	buildscript { 
-		repositories { 
-			maven { name "Alibaba" ; url 'https://maven.aliyun.com/repository/public' }
-			maven { name "Bstek" ; url 'http://nexus.bsdn.org/content/groups/public/' }
-			maven { name "M2" ; url 'https://plugins.gradle.org/m2/' }
-		}
-	}
 }
 
