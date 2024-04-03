@@ -1,3 +1,6 @@
-# Ignore by git
-home
-sample
+bin/
+home/*
+!home/README.md
+init.d/
+lib/
+sample/
